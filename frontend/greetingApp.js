@@ -7,6 +7,3 @@ function submitName() {
     document.getElementById('greetingMessage').innerText = message;
   }
   module.exports = { submitName, updateUI };
-
-  app.listen(3000, () => {
-    console.log("App wurde gestartet auf localhost:3000")})

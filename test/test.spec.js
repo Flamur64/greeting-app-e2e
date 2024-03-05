@@ -2,6 +2,13 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
+let options = new chrome.Options();
+options.addArguments(
+    'headless', 
+    'no-sandbox', 
+    'disable-dev-shm-usage' 
+);
+
 describe('Untitled', function() {
   this.timeout(30000)
   let driver
