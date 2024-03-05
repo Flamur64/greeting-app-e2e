@@ -13,13 +13,17 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Install ChromeDriver
+      run: |
+       wget -q -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/LATEST_RELEASE/chromedriver_linux64.zip
+       unzip /tmp/chromedriver.zip -d /tmp
+
+
     - name: Install dependencies
       run: npm install
-      working-directory: frontend
 
     - name: Run tests
       run: npm test
-      working-directory: test
 
     - name: Start server
       run: npm start
